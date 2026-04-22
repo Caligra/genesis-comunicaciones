@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulse AV | Live Event Solutions</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<script>
+  // Get elements
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+  const navItems = navLinks.querySelectorAll("a");
+
+  // Toggle menu open / close
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    menuToggle.classList.toggle("open");
+  });
+
+  // Close menu when a link is clicked (mobile UX)
+  navItems.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      menuToggle.classList.remove("open");
+    });
+  });
+
+  // Optional: Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+    const isClickInsideNav =
+      navLinks.contains(event.target) ||
+      menuToggle.contains(event.target);
+
+    if (!isClickInsideNav) {
+      navLinks.classList.remove("active");
+      menuToggle.classList.remove("open");
+    }
+  });
+
+  // Optional: Close menu on window resize (desktop switch)
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove("active");
+      menuToggle.classList.remove("open");
+    }
+  });
+</script>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <div class="logo">
+            <img src="head-logo.jpeg" alt="Genesis" />
+            <span class="logo-text">Genesis</span>
+        </div>
+
+
+        <!-- Hamburger Button -->
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="btn">Contact</a>
+        </nav>
+
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Audio & Visual Solutions<br />for Live Events</h1>
+            <p>Concerts, festivals, corporate events, and immersive experiences powered by cutting-edge AV technology.
+            </p>
+            <a href="#" class="btn-primary">Get a Quote</a>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services">
+        <h2>Our Services</h2>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Audio</h3>
+                <p>Crystal-clear sound systems, mixing, and live audio engineering.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Lighting</h3>
+                <p>Dynamic lighting design that transforms any stage or venue.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Video & LED</h3>
+                <p>High-resolution LED walls, projection mapping, and live video.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Staging</h3>
+                <p>Modular staging, trussing, and rigging solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio">
+        <h2>Recent Events</h2>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item">Event Photo</div>
+            <div class="portfolio-item">Event Photo</div>
+            <div class="portfolio-item">Event Photo</div>
+            <div class="portfolio-item">Event Photo</div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+        <h2>Let’s Bring Your Event to Life</h2>
+        <p>Tell us about your project and we’ll handle the rest.</p>
+        <a href="#" class="btn-primary">Contact Us</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Pulse AV. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
